@@ -1,6 +1,14 @@
-if chosen_role == "Wizard":
-    print("Congratulations! You excel in dexterity(DX) and intelligence(IQ).")
-    wizard_IQ = 2
-    wizard_DX = 1
-else:
-    print("No such character in the game! Choose between Wizard and Knight!")
+
+def Wizard_attributes():
+    Strength = 0
+    Dexterity = 2
+    Intelligence = 2 
+    Health = 0
+    print('Strength =', Strength)
+    print('Dexterity =,', Dexterity)
+    print('Health =', Health)
+    print('Intelligence =', Intelligence)
+
+
+
+    

@@ -15,12 +15,15 @@ def gameintro():
     print("In order to win, you have to win all the three challenges! ")
     print("Failure in any of the challenge will lead to an overall failure in the game.")
 
+import Wizard
+Wizard.wizardChallenges()
+import random
 def dicegameplay_rules():
     #Dice based game play rules 
     print("TIME FOR THE GAME PLAY RULES.")
     print("The user will get to choose the number of six-numbered dice and according to which the range will be calculated.")
     #importing random module in order to get a random number on the dice.
-    import random
+    
     number_of_dice = int(input("Enter the number of dices you want to play with; \n 1) 1 \n 2) 2 \n 3) 3  \n"))
     if number_of_dice == 1:
         diceroll_number = random.randint(1,6)
@@ -28,9 +31,12 @@ def dicegameplay_rules():
         if diceroll_number == 1:
             print("CRITICAL LOSS")
             print("SORRY! Not only did you loose the game but your attributes also decreased!")
+            Wizard.wizardChallenges
+            
         elif diceroll_number in [2,3]:
             print("LOSS")
             print("SORRY! You lost the game but at least you attributes experienced no change.")
+        
         elif diceroll_number in [4,5]:
             print("WIN")
             print("CONGRATULATIONS! You won the game but your attributes experienced no change.")

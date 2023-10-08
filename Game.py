@@ -1,3 +1,7 @@
+import random
+import Wizard as w
+import Knight as k
+
 def gameintro():
     #game introduction 
     print("Welcome to the Text Adventure Game!")
@@ -15,10 +19,8 @@ def gameintro():
     print("In order to win, you have to win all the three challenges! ")
     print("Failure in any of the challenge will lead to an overall failure in the game.")
 
-import Wizard
-Wizard.wizardChallenges()
-import random
-def dicegameplay_rules():
+
+def dicegameplay_rules(chosen_role):
     #Dice based game play rules 
     print("TIME FOR THE GAME PLAY RULES.")
     print("The user will get to choose the number of six-numbered dice and according to which the range will be calculated.")
@@ -31,34 +33,73 @@ def dicegameplay_rules():
         if diceroll_number == 1:
             print("CRITICAL LOSS")
             print("SORRY! Not only did you loose the game but your attributes also decreased!")
-            Wizard.wizardChallenges
+            print("GAME OVER")
             
         elif diceroll_number in [2,3]:
             print("LOSS")
             print("SORRY! You lost the game but at least you attributes experienced no change.")
+            print("You still have chance to win go through the challenges and may the forth be with you ")
+            if chosen_role == 'Wizard':
+                result = w.wizardChallenges().play_Wizard_game()
+                if result > 100:
+                    print("WIN!!!!")
+            else:
+                result = k.knightChallenges().play_Knight_game()
+                if result >= 80:
+                    print("WIN!!!!")
         
         elif diceroll_number in [4,5]:
             print("WIN")
             print("CONGRATULATIONS! You won the game but your attributes experienced no change.")
+            print("Its a win, but you have to go through the challenges in order to win the game")
+            if chosen_role == 'Wizard':
+                result = w.wizardChallenges().play_Wizard_game()
+                if result > 100:
+                    print("WIN!!!!")
+            else:
+                result = k.knightChallenges().play_Knight_game()
+                if result >= 80:
+                    print("WIN!!!!")
+                
         else:
             print("CRITICAL WIN")
             print("CONGRATULATIONS! Not only did you win the game but also your attributes increased!")
+            
     elif number_of_dice == 2:
         diceroll_number1 = random.randint(1,6)
         diceroll_number2 = random.randint(1,6)
         print(diceroll_number1, "is your dice roll number 1.")
         print(diceroll_number2, "is your dice roll number 2.")
-        sum = diceroll_number1 + diceroll_number2   #sum of numbers of both the dices. RANGE FROM (2,12)
-        print(sum, "is the sum of both the numbers.")
-        if sum in [2,3]:
+        sum1 = diceroll_number1 + diceroll_number2   #sum of numbers of both the dices. RANGE FROM (2,12)
+        print(sum1, "is the sum of both the numbers.")
+        if sum1 in [2,3]:
             print("CRITICAL LOSS")
             print("SORRY! Not only did you loose the game but your attributes also decreased!")
-        elif sum in [4,7]:
+        elif sum1 in [4,7]:
             print("LOSS")
             print("SORRY! You lost the game but at least you attributes experienced no change.")
-        elif sum in [8,10]:
+            print("You still have chance to win go through the challenges and may the forth be with you.")
+            if chosen_role == 'Wizard':
+                result = w.wizardChallenges().play_Wizard_game()
+                if result > 100:
+                    print("WIN!!!!")
+            else:
+                result = k.knightChallenges().play_Knight_game()
+                if result >= 80:
+                    print("WIN!!!!")
+            
+        elif sum1 in [8,10]:
             print("WIN")
             print("CONGRATULATIONS! You won the game but your attributes experienced no change.")
+            print("Its a win, but you have to go through the challenges in order to win the game.")
+            if chosen_role == 'Wizard':
+                result = w.wizardChallenges().play_Wizard_game()
+                if result > 100:
+                    print("WIN!!!!")
+            else:
+                result = k.knightChallenges().play_Knight_game()
+                if result >= 80:
+                    print("WIN!!!!")
         else:
             print('CRTICAL WIN')
             print("CONGRATULATIONS! Not only did you win the game but also your attributes increased!")
@@ -69,25 +110,39 @@ def dicegameplay_rules():
          print(diceroll_number1, "is your dice roll number 1.")
          print(diceroll_number2, "is your dice roll number 2.")
          print(diceroll_number3, "is your dice roll number 3.")
-         sum = diceroll_number1 + diceroll_number2 + diceroll_number3  #sum of numbers of all three dices. RANGE FROM (3,18)
-         print(sum, "is the sum of all the three numbers.")
-         if sum in [3,7]:
+         sum1 = diceroll_number1 + diceroll_number2 + diceroll_number3  #sum of numbers of all three dices. RANGE FROM (3,18)
+         print(sum1, "is the sum of all the three numbers.")
+         if sum1 in [3,7]:
              print("CRITICAL LOSS")
              print("SORRY! Not only did you loose the game but your attributes also decreased!")
-         elif sum in [8-11]:
+         elif sum1 in [8-11]:
              print("LOSS")
              print("SORRY! You lost the game but at least you attributes experienced no change.")
-         elif sum in [12,15]:
+             print("You still have chance to win go through the challenges and may the forth be with you.")
+             if chosen_role == 'Wizard':
+                 result = w.wizardChallenges().play_Wizard_game()
+                 if result > 100:
+                     print("WIN!!!!")
+             else:
+                 result = k.knightChallenges().play_Knight_game()
+                 if result >= 80:
+                     print("WIN!!!!")
+             
+         elif sum1 in [12,15]:
              print("WIN")
              print("CONGRATULATIONS! You won the game but your attributes experienced no change.")
+             print("Its a win, but you have to go through the challenges in order to win the game.")
+             if chosen_role == 'Wizard':
+                 result = w.wizardChallenges().play_Wizard_game()
+                 if result > 100:
+                     print("WIN!!!!")
+             else:
+                 result = k.knightChallenges().play_Knight_game()
+                 if result >= 80:
+                     print("WIN!!!!")
+             
          else:
              print("CRITICAL WIN")
              print("CONGRATULATIONS! Not only did you win the game but also your attributes increased!")
 
  
-
-
-    
-
-
-
